@@ -1,0 +1,60 @@
+.player-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .player-card {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .player-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+  
+  .player-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .player-info {
+    font-size: 16px;
+  }
+  
+  .player-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .player-position {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .player-area {
+    margin-bottom: 5px;
+  }
+  
+  .player-email {
+    margin-bottom: 5px;
+  }
+  
+  .player-contact {
+    margin-bottom: 5px;
+  }
+  
+  .player-info:not(:last-child) {
+    margin-bottom: 5px;
+  }
+  
