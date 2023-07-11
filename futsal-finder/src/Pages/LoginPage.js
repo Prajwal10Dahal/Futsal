@@ -3,6 +3,7 @@ import './LoginPage.css';
 import SignupForm from './SignupForm';
 import backgroundImage from './test4.webp';
 import { token } from 'morgan';
+import axios from 'axios';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -25,15 +26,18 @@ function LoginPage() {
         maxBodyLength: Infinity,
         url: 'http://localhost:3000/users/login',
         headers: { 
-          'Content-Type': 'application/json',
-          'Authorization': `${token}`
+          'Content-Type': 'application/json'
         },
-        data : data
+        data: data
       };
+      
 
       axios.request(config)
       .then((response) => {
         if(response.status==200){
+           const token = response.data.token;
+          localStorage.setItem('token',token)
+           console.log(token);
           alert('Signup successful!');
         }
         console.log(JSON.stringify(response.data));
@@ -66,10 +70,11 @@ function LoginPage() {
     //     alert('Invalid username or password');
     //   }
     // }
-  }else{
+  } else {
           // Signup failed
           alert('Please fill in all fields');
-  };
+  }
+};
 
   return (
     <div className="login-container">
@@ -122,7 +127,4 @@ function LoginPage() {
   );
 }
 
-
-
 export default LoginPage;
-

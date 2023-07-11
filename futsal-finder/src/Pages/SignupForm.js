@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SignupForm.css';
 import axios from 'axios';
+// import { useHistory } from 'react-router-dom';
 import backgroundImage from './test5.jpg';
 
 
@@ -40,6 +41,7 @@ function SignupForm() {
       .then((response) => {
         if(response.status==200){
           alert('Signup successful!');
+
         }
         console.log(JSON.stringify(response.data));
       })
